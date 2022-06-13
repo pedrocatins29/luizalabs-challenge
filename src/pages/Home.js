@@ -1,10 +1,9 @@
+import Header from "components/Header/Header";
 
 function Home() {
   return (
     <div>
-        <p>
-         teste
-        </p>
+      <Header/>
     </div>
   );
 }
