@@ -14,6 +14,6 @@ const getCharacter = async ({ queryKey }) => {
   });
 };
 
-export default function useCharacters() {
-  return useQuery(["characters", { limit: 1 }], getCharacter);
+export default function useCharacters({ limit }) {
+  return useQuery(["characters", { limit }], getCharacter);
 }
