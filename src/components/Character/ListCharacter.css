@@ -2,41 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  justify-content: center;
-  margin: 0;
+  margin: 2rem 4rem;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .caracter-list li {
   min-width: 200px;
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  /* flex-basis: 25%; */
-  /* flex: 1 1 25%; */
-  align-items: center;
 }
-
-.red-line > hr {
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-}
-
-.red-line {
-  position: relative;
-}
-/* .caracter-list li {
-  list-style: none;
-  float: left;
-  padding: 5px;
-  width: 200px;
-  height: 250px;
-  margin: 10px;
-}
-.caracter-list:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-} */

@@ -3,11 +3,20 @@ import Header from "components/Header/Header";
 import ListCharacter from "components/Character/ListCharacter";
 import SearchBar from "components/SearchBar/SearchBar";
 import useCharacters from "hooks/useCharacters";
+import { useContext, useState } from "react";
 import "./Home.css";
+import SearchBarContext from "context/SearchBarProvider";
 
 function Home() {
-  const { isLoading, isError, data, error } = useCharacters({ limit: 20 });
+  const [orderByName, setOrderByName] = useState(false);
 
+  const { searchBarValue } = useContext(SearchBarContext);
+
+  const { isLoading, isError, data, error } = useCharacters({
+    limit: 20,
+    filter: searchBarValue,
+    orderByName,
+  });
   if (isLoading) {
     return <span>Loading...</span>;
   }
@@ -16,15 +25,17 @@ function Home() {
     return <span>Error: {error.message}</span>;
   }
 
-  const { data: characters } = data.data;
-
   return (
     <>
       <Header />
       <SearchBar />
       <div>
-        <Filters charactersFound={characters.count} />
-        <ListCharacter characterData={characters.results} />
+        <Filters
+          charactersFound={data.length}
+          setOrderByName={setOrderByName}
+          orderByName={orderByName}
+        />
+        <ListCharacter characterData={data} />
       </div>
     </>
   );

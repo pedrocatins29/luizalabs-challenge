@@ -1,4 +1,5 @@
 body {
+  display: flow-root;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,9 +13,10 @@ code {
     monospace;
 }
 
-p,
-span {
-  color: #939393;
+/* color: #939393; */
+
+.red-text {
+  color: red;
 }
 
 h1 {

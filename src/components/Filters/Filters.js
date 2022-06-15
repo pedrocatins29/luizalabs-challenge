@@ -1,23 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Filters.css";
 
-function Filters({ charactersFound }) {
-  const [nameToggle, setNameToggle] = useState(false);
-
+function Filters({ charactersFound, setOrderByName, orderByName }) {
   return (
     <div className="filter-bar">
-      <span>Encontrados {charactersFound} Heróis</span>
-      <img src="assets/ic_heroi.svg" alt="Icone heroi" />
-      <span>Ordenar por nome - A/Z</span>
-      <img
-        className="pointer-click"
-        alt="Ordenar por nome"
-        onClick={() => setNameToggle((current) => !current)}
-        src={`assets/${nameToggle ? "toggle_off.svg" : "toggle_on.svg"}`}
-      />
+      <div>
+        <p className="">Encontrados {charactersFound} Heróis</p>
+      </div>
+      <div className="filters">
+        <div>
+          <img src="assets/ic_heroi.svg" alt="Icone heroi" />
+          <p className="red-text">Ordenar por nome - A/Z</p>
+          <img
+            className="pointer-click"
+            alt="Ordenar por nome"
+            onClick={() => setOrderByName((currentValue) => !currentValue)}
+            src={`assets/${orderByName ? "toggle_on.svg" : "toggle_off.svg"}`}
+          />
+        </div>
 
-      <img src="assets/favorito_01.svg" alt="Icone de favoritos" />
-      <p>Somente favoritos</p>
+        <div onClick={() => console.log("filtrar apenas os favoritos")}>
+          <img src="assets/favorito_01.svg" alt="Icone de favoritos" />
+          <p className="red-text">Somente favoritos</p>
+        </div>
+      </div>
     </div>
   );
 }

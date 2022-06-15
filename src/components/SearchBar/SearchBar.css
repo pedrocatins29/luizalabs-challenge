@@ -1,13 +1,38 @@
-.search-container{
-    display: flex;
-    justify-content: center;
-
+.search {
+  margin: 1rem auto;
+  width: 575px;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+  background-image: url("../../../public/assets/search_bar_vermelho.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.search:hover {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+.search:focus-within {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline: none;
 }
 
-.search-background{
-    width: 950px;
-    height: 70px;
-    background-image: url("../../../public/assets/search_bar_vermelho.svg");
-    background-size: auto;
-    background-repeat: no-repeat;
+.search-icon {
+  height: 20px;
+  position: relative;
+  top: 5px;
+  left: 20px;
+}
+
+#searchTerm {
+  background-color: transparent;
+  padding-left: 32px;
+  height: 45px;
+  border: none;
+  width: 480px;
+  font-size: 16px;
+  outline: none;
+}
+
+::placeholder {
+  color: #fc7c7c;
+  opacity: 1;
 }

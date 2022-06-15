@@ -7,6 +7,7 @@ function ListCharacter({ characterData }) {
     <CharacterCard
       name={character.name}
       favorited={false}
+      characterId={character.id}
       key={character.id}
       thumbnail={character.thumbnail}
     />

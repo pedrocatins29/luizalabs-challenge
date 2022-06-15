@@ -1,1 +1,20 @@
+.filter-bar {
+  display: flex;
+  margin-top: 4rem;
+  padding: 0 4rem;
+  justify-content: space-between;
+}
 
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.filters > div {
+  display: flex;
+  margin-left: 12px;
+  padding-left: 12px;
+}

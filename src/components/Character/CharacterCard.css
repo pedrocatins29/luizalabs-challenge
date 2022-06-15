@@ -2,3 +2,23 @@
   max-width: 100%;
   height: auto;
 }
+
+.character-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.red-line > hr {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 3px;
+  height: 3px;
+  border-width: 0;
+  color: red;
+  background-color: red;
+}
+
+.red-line {
+  position: relative;
+}
