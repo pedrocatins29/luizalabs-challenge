@@ -13,9 +13,12 @@ code {
     monospace;
 }
 
-/* color: #939393; */
+.grey {
+  color: #939393;
+}
 
-.red-text {
+.red {
+  padding: 0 1.4rem;
   color: red;
 }
 
