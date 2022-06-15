@@ -1,0 +1,13 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.search-background{
+    width: 950px;
+    height: 70px;
+    background-image: url("../../../public/assets/search_bar_vermelho.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+}

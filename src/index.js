@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Home from "./pages/Home"
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "./pages/Home";
+import reportWebVitals from "./reportWebVitals";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <Home />
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
