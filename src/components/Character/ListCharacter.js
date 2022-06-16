@@ -6,7 +6,7 @@ function ListCharacter({ characterData }) {
   const characterList = characterData.map((character) => (
     <CharacterCard
       name={character.name}
-      favorited={false}
+      favourited={false}
       characterId={character.id}
       key={character.id}
       thumbnail={character.thumbnail}

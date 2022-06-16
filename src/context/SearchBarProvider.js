@@ -1,4 +1,14 @@
-import { createContext } from "react";
+import { createContext, useState, React } from "react";
+
 const SearchBarContext = createContext();
 
-export default SearchBarContext;
+function SearchBarProvider({ children }) {
+  const [searchBarValue, setSearchBarValue] = useState("");
+  return (
+    <SearchBarContext.Provider value={{ searchBarValue, setSearchBarValue }}>
+      {children}
+    </SearchBarContext.Provider>
+  );
+}
+
+export { SearchBarProvider, SearchBarContext };

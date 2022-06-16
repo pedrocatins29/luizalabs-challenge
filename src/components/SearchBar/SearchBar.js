@@ -1,4 +1,4 @@
-import SearchBarContext from "context/SearchBarProvider";
+import { SearchBarContext } from "context/SearchBarProvider";
 import React, { useContext, useEffect, useState } from "react";
 import "./SearchBar.css";
 
