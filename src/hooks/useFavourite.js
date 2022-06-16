@@ -1,60 +1,36 @@
-import { useState, useEffect } from "react";
+import { FavoriteCharactersContext } from "context/FavoriteCharactersProvider";
+import { useContext } from "react";
 
-function useFavourite() {
-  // const [jorge, setJorge] = useState([]);
-  const [favourites, setFavourites] = useState([""]);
+function useFavorite() {
+  const { setFavorites, favorites } = useContext(FavoriteCharactersContext);
 
-  const addFavourite = ({ characterId }) => {
-    console.log(favourites);
-    if (characterId) {
-      setFavourites((oldArray) => [...oldArray, ...characterId]);
-    } else {
-      console.log("deu problema");
+  const toggleFavorite = ({ characterId }) => {
+    const meetsTheConditions = checkConditions(characterId);
+
+    if (meetsTheConditions) {
+      return setFavorites((favorite) => [characterId, ...favorite]);
     }
+
+    return removeFavorite(characterId);
   };
 
-  // useEffect(() => {
-  //   const favourites = JSON.parse(localStorage.getItem("favourites"));
-  //   if (favourites) {
-  //     setFavourites(favourites);
-  //   }
-  // }, []);
+  const checkConditions = (id) => {
+    const isFavorited = favorites.find((item) => item === id);
+    const moreThanFiveItens = favorites.length >= 5;
 
-  useEffect(() => {
-    console.log(favourites);
-    localStorage.setItem("favourites", JSON.stringify(favourites));
-  }, [favourites]);
+    if (isFavorited || moreThanFiveItens) {
+      return false;
+    }
 
-  //   const togglefavourite = (id) => {
-  // 	favourites.find((favourite) => {
-  // 		if (favourite.id === id) {
-  // 			favourite.checked = !favourite.checked;
-  // 		}
-  // 		return setfavourites([...favourites]);
-  // 	});
-  // };
+    return true;
+  };
 
-  return { addFavourite };
+  const removeFavorite = (id) => {
+    const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
+    setFavorites([...newFavorites]);
+  };
+
+  return { toggleFavorite, favorites };
 }
 
-export default useFavourite;
-
-// const deleteTodo = (id) => {
-// 	let newTodos = todos.filter((todo) => todo.id !== id);
-// 	setTodos([...newTodos]);
-// };
-
-// useEffect(() => {
-// 	let completeArray = [];
-// 	todos.filter((todo) => todo.complete === true && completeArray.push(todo));
-// 	setCompletedTasks(completeArray.length);
-// }, [todos]);
-
-// useEffect(() => {
-// 	let adderror = setTimeout(() => {
-// 		setError(false);
-// 	}, 2000);
-// 	return () => {
-// 		clearTimeout(adderror);
-// 	};
-// }, [error]);
+export default useFavorite;

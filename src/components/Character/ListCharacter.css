@@ -1,13 +1,11 @@
 .caracter-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
   margin: 2rem 4rem;
-  justify-content: space-between;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
 .caracter-list li {
-  min-width: 200px;
   list-style: none;
 }

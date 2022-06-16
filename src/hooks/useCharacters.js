@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
 import { api } from "config/api";
+import { useContext } from "react";
+import { FavoriteCharactersContext } from "context/FavoriteCharactersProvider";
 
 const getCharacter = async ({ queryKey }) => {
   const [, params] = queryKey;
@@ -14,7 +16,9 @@ const getCharacter = async ({ queryKey }) => {
   });
 };
 
-export default function useCharacters({ limit, filter, orderByName }) {
+const useCharacters = ({ limit, filter, toggleFilter }) => {
+  const { favorites } = useContext(FavoriteCharactersContext);
+
   return useQuery(["characters", { limit }], getCharacter, {
     select: ({ data }) => {
       const { results } = data.data;
@@ -23,15 +27,21 @@ export default function useCharacters({ limit, filter, orderByName }) {
         name.toLowerCase().includes(filter)
       );
 
-      if (orderByName) {
-        const sortedCharacters = filteredCharacters.sort((a, b) =>
-          a.name.localeCompare(b.name)
+      if (toggleFilter) {
+        const favoritedCharacters = filteredCharacters.filter((character) =>
+          favorites.includes(character.id)
         );
 
-        return sortedCharacters;
+        return favoritedCharacters;
       }
 
-      return filteredCharacters;
+      const sortedCharacters = filteredCharacters.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+
+      return sortedCharacters;
     },
   });
-}
+};
+
+export default useCharacters;

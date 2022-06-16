@@ -2,9 +2,14 @@ import React from "react";
 import "./CharacterCard.css";
 import { Link } from "react-router-dom";
 
-function CharacterCard({ name, thumbnail, favourited, characterId }) {
+function CharacterCard({
+  name,
+  thumbnail,
+  favorited,
+  characterId,
+  toggleFavorite,
+}) {
   const imagePath = `${thumbnail.path}/standard_fantastic.${thumbnail.extension}`;
-
   return (
     <li>
       <Link to={`/character/${characterId}`}>
@@ -20,9 +25,9 @@ function CharacterCard({ name, thumbnail, favourited, characterId }) {
       <div className="character-name">
         <p>{name}</p>
         <img
-          onClick={() => {}}
+          onClick={() => toggleFavorite({ characterId })}
           alt="Favorito"
-          src={favourited ? "assets/favorito_01.svg" : "assets/favorito_02.svg"}
+          src={favorited ? "assets/favorito_01.svg" : "assets/favorito_02.svg"}
         />
       </div>
     </li>

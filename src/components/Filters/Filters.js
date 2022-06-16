@@ -1,7 +1,7 @@
 import React from "react";
 import "./Filters.css";
 
-function Filters({ charactersFound, setOrderByName, orderByName }) {
+function Filters({ charactersFound, setToggleFilter, toggleFilter }) {
   return (
     <div className="filter-bar">
       <div>
@@ -14,8 +14,8 @@ function Filters({ charactersFound, setOrderByName, orderByName }) {
           <img
             className="pointer-click"
             alt="Ordenar por nome"
-            onClick={() => setOrderByName((currentValue) => !currentValue)}
-            src={`assets/${orderByName ? "toggle_on.svg" : "toggle_off.svg"}`}
+            onClick={() => setToggleFilter((currentValue) => !currentValue)}
+            src={`assets/${toggleFilter ? "toggle_on.svg" : "toggle_off.svg"}`}
           />
         </div>
 

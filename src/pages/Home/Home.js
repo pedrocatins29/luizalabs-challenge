@@ -8,14 +8,13 @@ import "./Home.css";
 import { SearchBarContext } from "context/SearchBarProvider";
 
 function Home() {
-  const [orderByName, setOrderByName] = useState(false);
-
+  const [toggleFilter, setToggleFilter] = useState(false);
   const { searchBarValue } = useContext(SearchBarContext);
 
   const { isLoading, isError, data, error } = useCharacters({
     limit: 20,
     filter: searchBarValue,
-    orderByName,
+    toggleFilter,
   });
   if (isLoading) {
     return <span>Loading...</span>;
@@ -26,18 +25,17 @@ function Home() {
   }
 
   return (
-    <>
+    <div>
       <Header />
       <SearchBar />
-      <div>
-        <Filters
-          charactersFound={data.length}
-          setOrderByName={setOrderByName}
-          orderByName={orderByName}
-        />
-        <ListCharacter characterData={data} />
-      </div>
-    </>
+      <Filters
+        charactersFound={data.length}
+        setToggleFilter={setToggleFilter}
+        toggleFilter={toggleFilter}
+      />
+      <ListCharacter characterData={data} />
+      <div className="footer" />
+    </div>
   );
 }
 
