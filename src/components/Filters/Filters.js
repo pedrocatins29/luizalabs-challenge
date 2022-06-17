@@ -10,7 +10,9 @@ function Filters({ charactersFound, setToggleFilter, toggleFilter }) {
       <div className="filters">
         <div>
           <img src="assets/ic_heroi.svg" alt="Icone heroi" />
-          <p className="red">Ordenar por nome - A/Z</p>
+          <p className={toggleFilter ? "grey" : "red"}>
+            Ordenar por nome - A/Z
+          </p>
           <img
             className="pointer-click"
             alt="Ordenar por nome"
@@ -21,7 +23,7 @@ function Filters({ charactersFound, setToggleFilter, toggleFilter }) {
 
         <div onClick={() => console.log("filtrar apenas os favoritos")}>
           <img src="assets/favorito_01.svg" alt="Icone de favoritos" />
-          <p className="red">Somente favoritos</p>
+          <p className={toggleFilter ? "red" : "grey"}>Somente favoritos</p>
         </div>
       </div>
     </div>

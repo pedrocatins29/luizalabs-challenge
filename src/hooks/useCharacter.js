@@ -14,5 +14,10 @@ const getCharacter = async ({ queryKey }) => {
 };
 
 export default function useCharacter({ characterId }) {
-  return useQuery(["character", { characterId }], getCharacter);
+  return useQuery(["character", { characterId }], getCharacter, {
+    select: ({ data }) => {
+      const { results } = data.data;
+      return results[0];
+    },
+  });
 }

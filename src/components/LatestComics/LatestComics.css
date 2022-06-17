@@ -1,0 +1,12 @@
+.comics-list {
+  margin-top: 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 5rem;
+}
+
+.comics-list li {
+  flex-direction: column;
+  list-style: none;
+}

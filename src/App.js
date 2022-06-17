@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import Character from "pages/Character";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

@@ -1,7 +1,6 @@
 .filter-bar {
   display: flex;
   margin-top: 4rem;
-  padding: 0 4rem;
   justify-content: space-between;
 }
 

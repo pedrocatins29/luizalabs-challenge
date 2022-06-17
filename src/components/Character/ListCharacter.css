@@ -1,5 +1,5 @@
 .caracter-list {
-  margin: 2rem 4rem;
+  margin: 2rem 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

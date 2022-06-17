@@ -2,7 +2,7 @@ import { SearchBarContext } from "context/SearchBarProvider";
 import React, { useContext, useEffect, useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar() {
+function SearchBar({ variant }) {
   const [inputText, setInputText] = useState("");
   const { setSearchBarValue } = useContext(SearchBarContext);
 
@@ -21,10 +21,10 @@ function SearchBar() {
   }, [setSearchBarValue, inputText]);
 
   return (
-    <div className="search">
+    <div className={variant ? "search" : "search-white"}>
       <img
         className="search-icon"
-        src="assets/ic_busca.svg"
+        src="/assets/ic_busca.svg"
         alt="Icone de busca"
       />
       <input

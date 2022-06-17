@@ -4,7 +4,6 @@ import ListCharacter from "components/Character/ListCharacter";
 import SearchBar from "components/SearchBar/SearchBar";
 import useCharacters from "hooks/useCharacters";
 import { useContext, useState } from "react";
-import "./Home.css";
 import { SearchBarContext } from "context/SearchBarProvider";
 
 function Home() {
@@ -25,9 +24,9 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Header />
-      <SearchBar />
+      <SearchBar variant={true} />
       <Filters
         charactersFound={data.length}
         setToggleFilter={setToggleFilter}

@@ -7,6 +7,25 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.search-white {
+  margin: 1rem auto;
+  width: 575px;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+  background-image: url("../../../public/assets/search_bar_branco.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.search-white:hover {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+.search-white:focus-within {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline: none;
+}
+
 .search:hover {
   box-shadow: 1px 1px 8px 1px #dcdcdc;
 }

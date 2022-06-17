@@ -1,0 +1,43 @@
+.details-container {
+  flex-direction: column;
+  flex: 2;
+  max-width: 380px;
+}
+
+.main-content {
+  max-height: 600px;
+  margin: 2rem 2rem;
+}
+
+.available-text {
+  margin: 10px 1rem;
+}
+
+.info-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-container > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.characters-name {
+  justify-content: space-between;
+}
+
+.rating {
+  align-items: center;
+}
+
+.rating > p {
+  margin-right: 1rem;
+}
