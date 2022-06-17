@@ -15,6 +15,7 @@ function Home() {
     limit: 20,
     searchFilter: searchBarValue,
     toggleFilter,
+    orderBy: "-modified"
   });
   if (isLoading) {
     return <Loading />;

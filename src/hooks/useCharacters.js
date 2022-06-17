@@ -27,7 +27,7 @@ const getCharacter = async ({ queryKey }) => {
 const useCharacters = ({ limit, searchFilter, toggleFilter }) => {
   const { favorites } = useContext(FavoriteCharactersContext);
 
-  return useQuery(["characters", { limit }], getCharacter, {
+  return useQuery(["characters", { limit, orderBy }], getCharacter, {
     select: ({ data }) => {
       const { results } = data.data;
 
