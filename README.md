@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+## Passos para rodar o projeto em ambiente de desenvolvimento
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Usando yarn para instalar as dependencias:
 
-## Available Scripts
+```bash
+$ yarn
+```
 
-In the project directory, you can run:
+Criar um .env na raiz do projeto e substituir os valores com as informações corretas:
 
-### `npm start`
+```bash
+REACT_APP_MARVEL_API_URL=URL base para as requisições
+REACT_APP_MARVEL_API_PUBLIC_KEY=Sua chave publica da Marvel API
+REACT_APP_MARVEL_API_HASH=MD5 Hash da sua chave privada
+REACT_APP_TIMESTAMP=Sequencia de digitos usado para criar o Hash
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ps: você pode gerar seu hash [aqui](https://www.md5hashgenerator.com/) utilizando sua chave privada em conjunto com uma sequencia de numero
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Exemplo de URL base utilizada: https://gateway.marvel.com/v1/public
 
-### `npm test`
+Iniciar o projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ yarn start
+```
+
+## Tecnologias utilizadas
+
+### - [Create React App](https://github.com/facebook/create-react-app).
+
+### - [React Query](https://react-query.tanstack.com/).
+
+### - [React-router-dom](https://reactrouter.com/).
+
+### - [Axios](https://github.com/axios/axios).
+
+### - [Testing-library](https://github.com/testing-library/react-testing-library).
+
+### - [Vercel](https://vercel.com/)
+
+## Scripts do projeto
+
+### `yarn start`
+
+Comando utilizado para iniciar o projeto em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para ver no seu navegador.
+
+### `yarn test`
+
+Comando para rodar os testes unitarios do projeto
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cria uma versão de build do projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Ferramenta de deploy `
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Foi usado o Vercel para hospedar o [site](https://luizalabs-challenge.vercel.app)

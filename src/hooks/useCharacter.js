@@ -6,7 +6,7 @@ const getCharacter = async ({ queryKey }) => {
 
   return api.get(`/characters/${characterId}`, {
     params: {
-      ts: 100,
+      ts: process.env.REACT_APP_TIMESTAMP,
       apikey: process.env.REACT_APP_MARVEL_API_PUBLIC_KEY,
       hash: process.env.REACT_APP_MARVEL_API_HASH,
     },
