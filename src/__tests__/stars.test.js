@@ -6,7 +6,6 @@ import StarRating from "components/StarRating/StarRating";
 test("deve mostrar o numero correto de estrelas preenchidas", () => {
   const availableStars = 5;
   const stars = 4;
-
   render(<StarRating rating={stars} />);
 
   expect(screen.queryAllByAltText("Estrela vermelha").length).toBe(stars);
