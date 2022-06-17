@@ -15,6 +15,14 @@ const getComicsFromCharacter = async ({ queryKey }) => {
   });
 };
 
+/**
+ * Busca os detalhes de um quadrinho
+ *
+ * @param {*} characterId ID do personagem
+ * @param {*} orderBy Filtro de ordenação
+ * @param {*} limit Limite de resultados
+ * @returns {Array} Resultado da API
+ */
 function useComics({ characterId, orderBy, limit }) {
   return useQuery(
     ["comics", { characterId, orderBy, limit }],

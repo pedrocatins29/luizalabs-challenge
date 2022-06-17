@@ -13,6 +13,12 @@ const getCharacter = async ({ queryKey }) => {
   });
 };
 
+/**
+ * Busca os detalhes de um personagem
+ *
+ * @param {String} characterId ID do personagem
+ * @returns {Array} Resultado da API
+ */
 export default function useCharacter({ characterId }) {
   return useQuery(["character", { characterId }], getCharacter, {
     select: ({ data }) => {

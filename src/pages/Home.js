@@ -13,7 +13,7 @@ function Home() {
 
   const { isLoading, isError, data, error } = useCharacters({
     limit: 20,
-    filter: searchBarValue,
+    searchFilter: searchBarValue,
     toggleFilter,
   });
   if (isLoading) {

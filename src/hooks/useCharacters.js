@@ -16,7 +16,15 @@ const getCharacter = async ({ queryKey }) => {
   });
 };
 
-const useCharacters = ({ limit, filter, toggleFilter }) => {
+/**
+ * Busca os personagens e aplica os filtros escolhidos
+ *
+ * @param {boolean} toggleFilter Define se a lista é ordenada por nome ou por favoritos
+ * @param {string} searchFilter Filtro de pesquisa
+ * @param {number} limit Limite de resultados
+ * @returns {Array} Resultado da API
+ */
+const useCharacters = ({ limit, searchFilter, toggleFilter }) => {
   const { favorites } = useContext(FavoriteCharactersContext);
 
   return useQuery(["characters", { limit }], getCharacter, {
@@ -24,7 +32,7 @@ const useCharacters = ({ limit, filter, toggleFilter }) => {
       const { results } = data.data;
 
       const filteredCharacters = results.filter(({ name }) =>
-        name.toLowerCase().includes(filter)
+        name.toLowerCase().includes(searchFilter)
       );
 
       if (toggleFilter) {
