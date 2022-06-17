@@ -25,6 +25,24 @@ Iniciar o projeto:
 $ yarn start
 ```
 
+## `Possiveis melhorias`
+
+### `Quantidade de testes`
+
+A quantidade de testes não está ideal para um projeto dessa complexidade, a minha ideia era criar muito mais testes, principalmente para as partes mais complexas, que acabaram não sendo testadas devido ao tempo curto, minha ideia é continuar adicionando os testes durante a semana, já que é uma parte super importante para projetos complexos.
+
+### `Cache`
+
+Seria interessante criar um sistema de cache, porem não foi feito devido a tarefas que eram mais essenciais para o projeto.
+
+### `Mobile friendly`
+
+Outro ponto que seria interessante é possibilitar usuarios mobile a utilizar o site(usando media queries, por exemplo)
+
+### `Pagination`
+
+Criar um sistema de pagination para poder ver mais heróis
+
 ## Tecnologias utilizadas
 
 ### - [Create React App](https://github.com/facebook/create-react-app)
