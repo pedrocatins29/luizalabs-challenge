@@ -29,7 +29,7 @@ $ yarn start
 
 ### `Quantidade de testes`
 
-A quantidade de testes não está ideal para um projeto dessa complexidade, a minha ideia era criar muito mais testes, principalmente para as partes mais complexas que acabaram não sendo testadas, devido ao curto tempo.
+A quantidade de testes não está ideal para um projeto dessa complexidade, a minha ideia era criar muito mais testes, principalmente para as partes mais complexas que acabaram não sendo testadas, devido ao curto periodo de tempo.
 
 Minha ideia é continuar adicionando os testes durante a semana, já que é uma parte super importante para projetos complexos.
 
