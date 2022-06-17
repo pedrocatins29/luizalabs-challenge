@@ -5,6 +5,9 @@ import CharacterHeader from "components/Header/CharacterHeader";
 import CharacterDetails from "components/Character/CharacterDetails";
 import useComics from "hooks/useComics";
 import LatestComics from "components/LatestComics/LatestComics";
+import Loading from "components/Loading/Loading";
+import useLastComicRelease from "hooks/useLastComicRelease";
+import { useQuery } from "react-query";
 
 function Character() {
   let { id } = useParams();
@@ -18,8 +21,18 @@ function Character() {
     error: comicsError,
   } = useComics({ characterId: id, orderBy: "onsaleDate", limit: 10 });
 
+  const lastComicDate = comicsData?.[0]?.dates?.[0].date;
+
+  const getLastComicRelease = useQuery(
+    ["lastComic", { lastComicDate }],
+    useLastComicRelease,
+    {
+      enabled: !!lastComicDate,
+    }
+  );
+
   if (isLoading || isLoadingComics) {
-    return <span>Loading...</span>;
+    return <Loading />;
   }
 
   if (isError || isErrorComics) {
@@ -29,7 +42,10 @@ function Character() {
   return (
     <div className="container">
       <CharacterHeader />
-      <CharacterDetails character={data} />
+      <CharacterDetails
+        character={data}
+        lastRelease={getLastComicRelease.data}
+      />
       <LatestComics comics={comicsData} />
     </div>
   );

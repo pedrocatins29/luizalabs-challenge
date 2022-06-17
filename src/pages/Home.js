@@ -5,6 +5,7 @@ import SearchBar from "components/SearchBar/SearchBar";
 import useCharacters from "hooks/useCharacters";
 import { useContext, useState } from "react";
 import { SearchBarContext } from "context/SearchBarProvider";
+import Loading from "components/Loading/Loading";
 
 function Home() {
   const [toggleFilter, setToggleFilter] = useState(false);
@@ -16,7 +17,7 @@ function Home() {
     toggleFilter,
   });
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <Loading />;
   }
 
   if (isError) {

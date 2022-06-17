@@ -1,23 +1,33 @@
 import StarRating from "components/StarRating/StarRating";
 import React from "react";
 import "./CharacterDetails.css";
+import useFavorite from "hooks/useFavourite";
 
-function CharacterDetails({ character }) {
-  const { name, description, comics, series, thumbnail } = character;
+function CharacterDetails({ character, lastRelease }) {
+  const { name, description, comics, series, thumbnail, id } = character;
+  const { toggleFavorite, favorites } = useFavorite();
+
+  const isFavorited = favorites?.includes(id);
   return (
     <div className="d-flex main-content">
       <div className="d-flex details-container">
         <div className="d-flex characters-name">
           <h1>{name}</h1>
           <img
-            onClick={() => {}}
+            onClick={() => toggleFavorite({ characterId: id })}
             alt="Heroi Favoritado"
-            //   src={favorited ? "assets/favorito_01.svg" : "assets/favorito_02.svg"}
-            src="/assets/favorito_01.svg"
+            className="pointer-click"
+            src={
+              isFavorited
+                ? "/assets/favorito_01.svg"
+                : "/assets/favorito_02.svg"
+            }
           />
         </div>
 
-        <p>{description || "Esse personagem não possui descrição"}</p>
+        <p style={{ color: "#939393" }}>
+          {description || "Esse personagem não possui descrição"}
+        </p>
 
         <div className="d-flex info-row">
           <div>
@@ -38,10 +48,11 @@ function CharacterDetails({ character }) {
 
         <div className="d-flex rating">
           <p className="bold-text">Rating:</p>
+          {/* /Não consegui achar o rating o heroi na API */}
           <StarRating rating={4} />
         </div>
 
-        <p className="bold-text">Último quadrinho: </p>
+        <p className="bold-text">Último quadrinho: {lastRelease}</p>
       </div>
       <div className="image-container">
         <img
