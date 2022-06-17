@@ -1,6 +1,6 @@
 .details-container {
   flex-direction: column;
-  flex: 1;
+  flex: 2;
   max-width: 380px;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .image-container {
+  max-width: 60%;
   flex: 3;
   display: flex;
   justify-content: flex-end;
@@ -32,6 +33,21 @@
 
 .characters-name {
   justify-content: space-between;
+}
+
+.characters-name > img {
+  display: flex;
+  align-self: center;
+  flex: 1;
+  width: auto;
+  max-height: 30%;
+  height: auto;
+}
+
+.characters-name > h1 {
+  display: flex;
+  align-self: center;
+  flex: 3;
 }
 
 .rating {

@@ -6,7 +6,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SearchBarProvider } from "context/SearchBarProvider";
 import { FavoriteCharactersProvider } from "context/FavoriteCharactersProvider";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
   return (

@@ -25,17 +25,18 @@ function Home() {
   }
 
   return (
-    <div className="container">
-      <Header />
-      <SearchBar variant={true} />
-      <Filters
-        charactersFound={data.length}
-        setToggleFilter={setToggleFilter}
-        toggleFilter={toggleFilter}
-      />
-      <ListCharacter characterData={data} />
-      <div className="footer" />
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <SearchBar variant={true} />
+        <Filters
+          charactersFound={data.length}
+          setToggleFilter={setToggleFilter}
+          toggleFilter={toggleFilter}
+        />
+        <ListCharacter characterData={data} />
+      </div>
+    </>
   );
 }
 
