@@ -19,7 +19,7 @@ function Character() {
     isError: isErrorComics,
     data: comicsData,
     error: comicsError,
-  } = useComics({ characterId: id, orderBy: "onsaleDate", limit: 10 });
+  } = useComics({ characterId: id, orderBy: "-onsaleDate", limit: 10 });
 
   const lastComicDate = comicsData?.[0]?.dates?.[0].date;
 
