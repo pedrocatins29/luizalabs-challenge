@@ -24,7 +24,7 @@ const getCharacter = async ({ queryKey }) => {
  * @param {number} limit Limite de resultados
  * @returns {Array} Resultado da API
  */
-const useCharacters = ({ limit, searchFilter, toggleFilter }) => {
+const useCharacters = ({ limit, searchFilter, toggleFilter, orderBy }) => {
   const { favorites } = useContext(FavoriteCharactersContext);
 
   return useQuery(["characters", { limit, orderBy }], getCharacter, {
