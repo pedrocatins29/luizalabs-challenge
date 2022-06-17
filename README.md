@@ -27,15 +27,15 @@ $ yarn start
 
 ## Tecnologias utilizadas
 
-### - [Create React App](https://github.com/facebook/create-react-app).
+### - [Create React App](https://github.com/facebook/create-react-app)
 
-### - [React Query](https://react-query.tanstack.com/).
+### - [React Query](https://react-query.tanstack.com/)
 
-### - [React-router-dom](https://reactrouter.com/).
+### - [React-router-dom](https://reactrouter.com/)
 
-### - [Axios](https://github.com/axios/axios).
+### - [Axios](https://github.com/axios/axios)
 
-### - [Testing-library](https://github.com/testing-library/react-testing-library).
+### - [Testing-library](https://github.com/testing-library/react-testing-library)
 
 ### - [Vercel](https://vercel.com/)
 
